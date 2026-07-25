@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T13:06:18.838394+00:00",
+  "generated_at": "2026-07-25T14:45:14.474037+00:00",
   "symbols": [
     {
       "symbol": "BTC/USDT:USDT",
@@ -8,9 +8,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 64028.2,
-        "high": 64098.0,
+        "high": 64256.0,
         "low": 63996.7,
-        "close": 64084.2
+        "close": 64154.3
       },
       "daily_pivot": {
         "PP": 64533.43333333,
@@ -30,8 +30,14 @@
         "S2": 63767.81293333,
         "S3": 63650.23333333
       },
-      "pp_confluence_pct": 0.8979,
+      "pp_confluence_pct": 0.8969,
       "events": [
+        {
+          "source": "Haos",
+          "level": "R2",
+          "price_level": 64148.25373333,
+          "result": "BREAKOUT"
+        },
         {
           "source": "Haos",
           "level": "R1",
@@ -47,9 +53,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 1856.99,
-        "high": 1862.49,
+        "high": 1871.98,
         "low": 1856.01,
-        "close": 1861.01
+        "close": 1866.92
       },
       "daily_pivot": {
         "PP": 1872.21333333,
@@ -69,13 +75,19 @@
         "S2": 1850.08841333,
         "S3": 1846.67333333
       },
-      "pp_confluence_pct": 0.892,
+      "pp_confluence_pct": 0.8892,
       "events": [
+        {
+          "source": "Haos",
+          "level": "R3",
+          "price_level": 1864.55333333,
+          "result": "BREAKOUT"
+        },
         {
           "source": "Haos",
           "level": "R2",
           "price_level": 1861.13825333,
-          "result": "REJECTION"
+          "result": "BREAKOUT"
         },
         {
           "source": "Haos",
@@ -92,9 +104,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 73.88,
-        "high": 73.97,
-        "low": 73.82,
-        "close": 73.93
+        "high": 74.15,
+        "low": 73.73,
+        "close": 73.92
       },
       "daily_pivot": {
         "PP": 74.56333333,
@@ -114,8 +126,21 @@
         "S2": 73.47482,
         "S3": 73.28
       },
-      "pp_confluence_pct": 1.046,
-      "events": []
+      "pp_confluence_pct": 1.0462,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "R2",
+          "price_level": 74.10518,
+          "result": "REJECTION"
+        },
+        {
+          "source": "Haos",
+          "level": "R1",
+          "price_level": 73.98482,
+          "result": "REJECTION"
+        }
+      ]
     },
     {
       "symbol": "BNB/USDT:USDT",
@@ -124,9 +149,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 565.4,
-        "high": 567.4,
+        "high": 569.1,
         "low": 564.8,
-        "close": 567.1
+        "close": 566.6
       },
       "daily_pivot": {
         "PP": 563.8,
@@ -146,13 +171,13 @@
         "S2": 563.92093333,
         "S3": 563.23333333
       },
-      "pp_confluence_pct": 0.2175,
+      "pp_confluence_pct": 0.2177,
       "events": [
         {
           "source": "Haos",
           "level": "R3",
           "price_level": 566.83333333,
-          "result": "BREAKOUT"
+          "result": "REJECTION"
         },
         {
           "source": "Haos",
@@ -175,9 +200,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 1.0894,
-        "high": 1.0914,
+        "high": 1.0931,
         "low": 1.0886,
-        "close": 1.091
+        "close": 1.0917
       },
       "daily_pivot": {
         "PP": 1.0989,
@@ -197,8 +222,14 @@
         "S2": 1.084283,
         "S3": 1.0818
       },
-      "pp_confluence_pct": 0.9716,
+      "pp_confluence_pct": 0.971,
       "events": [
+        {
+          "source": "Haos",
+          "level": "R2",
+          "price_level": 1.092317,
+          "result": "REJECTION"
+        },
         {
           "source": "Haos",
           "level": "R1",
@@ -214,9 +245,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 0.06941,
-        "high": 0.06997,
+        "high": 0.07024,
         "low": 0.06938,
-        "close": 0.06988
+        "close": 0.07019
       },
       "daily_pivot": {
         "PP": 0.06926667,
@@ -236,7 +267,7 @@
         "S2": 0.0690919,
         "S3": 0.06892
       },
-      "pp_confluence_pct": 0.1479,
+      "pp_confluence_pct": 0.1472,
       "events": [
         {
           "source": "Haos",
@@ -265,9 +296,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 0.1624,
-        "high": 0.1634,
+        "high": 0.164,
         "low": 0.1624,
-        "close": 0.1634
+        "close": 0.1638
       },
       "daily_pivot": {
         "PP": 0.16483333,
@@ -287,8 +318,14 @@
         "S2": 0.1612348,
         "S3": 0.1607
       },
-      "pp_confluence_pct": 1.6728,
+      "pp_confluence_pct": 1.6687,
       "events": [
+        {
+          "source": "Haos",
+          "level": "R3",
+          "price_level": 0.1635,
+          "result": "BREAKOUT"
+        },
         {
           "source": "Haos",
           "level": "R2",
@@ -310,9 +347,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 1.789,
-        "high": 1.797,
-        "low": 1.786,
-        "close": 1.795
+        "high": 1.799,
+        "low": 1.784,
+        "close": 1.794
       },
       "daily_pivot": {
         "PP": 1.83533333,
@@ -332,8 +369,14 @@
         "S2": 1.77616067,
         "S3": 1.76966667
       },
-      "pp_confluence_pct": 2.7112,
+      "pp_confluence_pct": 2.7127,
       "events": [
+        {
+          "source": "Haos",
+          "level": "R2",
+          "price_level": 1.79717267,
+          "result": "REJECTION"
+        },
         {
           "source": "Haos",
           "level": "R1",
@@ -349,9 +392,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 0.0861,
-        "high": 0.08638,
-        "low": 0.08607,
-        "close": 0.0862
+        "high": 0.08669,
+        "low": 0.08584,
+        "close": 0.08604
       },
       "daily_pivot": {
         "PP": 0.08787667,
@@ -371,7 +414,7 @@
         "S2": 0.08507045,
         "S3": 0.08438667
       },
-      "pp_confluence_pct": 1.9722,
+      "pp_confluence_pct": 1.9758,
       "events": []
     },
     {
@@ -383,7 +426,7 @@
         "open": 0.343,
         "high": 0.3509,
         "low": 0.3421,
-        "close": 0.3494
+        "close": 0.3459
       },
       "daily_pivot": {
         "PP": 0.357,
@@ -403,13 +446,13 @@
         "S2": 0.34006207,
         "S3": 0.33826667
       },
-      "pp_confluence_pct": 4.0164,
+      "pp_confluence_pct": 4.057,
       "events": [
         {
           "source": "Haos",
           "level": "R3",
           "price_level": 0.34766667,
-          "result": "BREAKOUT"
+          "result": "REJECTION"
         },
         {
           "source": "Haos",
@@ -432,9 +475,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 0.5946,
-        "high": 0.5979,
-        "low": 0.5935,
-        "close": 0.5946
+        "high": 0.6024,
+        "low": 0.5921,
+        "close": 0.5956
       },
       "daily_pivot": {
         "PP": 0.60936667,
@@ -454,8 +497,20 @@
         "S2": 0.58850393,
         "S3": 0.58533333
       },
-      "pp_confluence_pct": 2.646,
+      "pp_confluence_pct": 2.6416,
       "events": [
+        {
+          "source": "Haos",
+          "level": "R3",
+          "price_level": 0.60193333,
+          "result": "REJECTION"
+        },
+        {
+          "source": "Haos",
+          "level": "R2",
+          "price_level": 0.59876273,
+          "result": "REJECTION"
+        },
         {
           "source": "Haos",
           "level": "R1",
@@ -471,9 +526,9 @@
       "last_candle": {
         "time": 1784980800000,
         "open": 57.71,
-        "high": 57.728,
-        "low": 57.4,
-        "close": 57.592
+        "high": 57.788,
+        "low": 57.183,
+        "close": 57.361
       },
       "daily_pivot": {
         "PP": 57.71833333,
@@ -493,7 +548,7 @@
         "S2": 56.87826067,
         "S3": 56.47066667
       },
-      "pp_confluence_pct": 0.3137,
+      "pp_confluence_pct": 0.315,
       "events": []
     }
   ]
