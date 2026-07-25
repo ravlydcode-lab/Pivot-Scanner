@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-07-25T19:10:33.996251+00:00",
+  "generated_at": "2026-07-25T20:26:28.280320+00:00",
   "symbols": [
     {
       "symbol": "BTC/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 64152.5,
-        "high": 64428.5,
-        "low": 64092.2,
-        "close": 64392.9
+        "time": 1785009600000,
+        "open": 64362.8,
+        "high": 64368.5,
+        "low": 64310.8,
+        "close": 64339.3
       },
       "daily_pivot": {
         "PP": 64533.43333333,
@@ -22,46 +22,27 @@
         "S3": 61205.66666667
       },
       "haoshoku_pivot": {
-        "PP": 64135.06666667,
-        "R1": 64234.11926667,
-        "R2": 64295.31406667,
-        "R3": 64394.36666667,
-        "S1": 64036.01406667,
-        "S2": 63974.81926667,
-        "S3": 63875.76666667
+        "PP": 64294.46666667,
+        "R1": 64422.93326667,
+        "R2": 64502.30006667,
+        "R3": 64630.76666667,
+        "S1": 64166.00006667,
+        "S2": 64086.63326667,
+        "S3": 63958.16666667
       },
-      "pp_confluence_pct": 0.6186,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 64394.36666667,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 64295.31406667,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 64234.11926667,
-          "result": "BREAKOUT"
-        }
-      ]
+      "pp_confluence_pct": 0.3714,
+      "events": []
     },
     {
       "symbol": "ETH/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 1867.05,
-        "high": 1876.79,
-        "low": 1863.77,
-        "close": 1874.48
+        "time": 1785009600000,
+        "open": 1873.91,
+        "high": 1874.0,
+        "low": 1869.62,
+        "close": 1871.33
       },
       "daily_pivot": {
         "PP": 1872.21333333,
@@ -73,40 +54,27 @@
         "S3": 1773.34666667
       },
       "haoshoku_pivot": {
-        "PP": 1865.01666667,
-        "R1": 1871.11720667,
-        "R2": 1874.88612667,
-        "R3": 1880.98666667,
-        "S1": 1858.91612667,
-        "S2": 1855.14720667,
-        "S3": 1849.04666667
+        "PP": 1871.49,
+        "R1": 1876.46364,
+        "R2": 1879.53636,
+        "R3": 1884.51,
+        "S1": 1866.51636,
+        "S2": 1863.44364,
+        "S3": 1858.47
       },
-      "pp_confluence_pct": 0.3839,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 1874.88612667,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 1871.11720667,
-          "result": "BREAKOUT"
-        }
-      ]
+      "pp_confluence_pct": 0.0387,
+      "events": []
     },
     {
       "symbol": "SOL/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 74.12,
-        "high": 74.68,
-        "low": 74.04,
-        "close": 74.61
+        "time": 1785009600000,
+        "open": 74.51,
+        "high": 74.53,
+        "low": 74.38,
+        "close": 74.43
       },
       "daily_pivot": {
         "PP": 74.56333333,
@@ -118,46 +86,27 @@
         "S3": 69.70666667
       },
       "haoshoku_pivot": {
-        "PP": 74.04666667,
-        "R1": 74.25676667,
-        "R2": 74.38656667,
-        "R3": 74.59666667,
-        "S1": 73.83656667,
-        "S2": 73.70676667,
-        "S3": 73.49666667
+        "PP": 74.41,
+        "R1": 74.65448,
+        "R2": 74.80552,
+        "R3": 75.05,
+        "S1": 74.16552,
+        "S2": 74.01448,
+        "S3": 73.77
       },
-      "pp_confluence_pct": 0.6925,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 74.59666667,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 74.38656667,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 74.25676667,
-          "result": "BREAKOUT"
-        }
-      ]
+      "pp_confluence_pct": 0.206,
+      "events": []
     },
     {
       "symbol": "BNB/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 567.0,
-        "high": 569.0,
-        "low": 566.3,
-        "close": 568.3
+        "time": 1785009600000,
+        "open": 568.5,
+        "high": 568.9,
+        "low": 568.1,
+        "close": 568.6
       },
       "daily_pivot": {
         "PP": 563.8,
@@ -169,34 +118,27 @@
         "S3": 541.1
       },
       "haoshoku_pivot": {
-        "PP": 566.96666667,
-        "R1": 568.60926667,
-        "R2": 569.62406667,
-        "R3": 571.26666667,
-        "S1": 565.32406667,
-        "S2": 564.30926667,
-        "S3": 562.66666667
+        "PP": 567.93333333,
+        "R1": 568.96473333,
+        "R2": 569.60193333,
+        "R3": 570.63333333,
+        "S1": 566.90193333,
+        "S2": 566.26473333,
+        "S3": 565.23333333
       },
-      "pp_confluence_pct": 0.5572,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 568.60926667,
-          "result": "REJECTION"
-        }
-      ]
+      "pp_confluence_pct": 0.7269,
+      "events": []
     },
     {
       "symbol": "XRP/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 1.0979,
-        "high": 1.1073,
-        "low": 1.0967,
-        "close": 1.1013
+        "time": 1785009600000,
+        "open": 1.1,
+        "high": 1.1005,
+        "low": 1.0989,
+        "close": 1.0997
       },
       "daily_pivot": {
         "PP": 1.0989,
@@ -208,46 +150,27 @@
         "S3": 1.04
       },
       "haoshoku_pivot": {
-        "PP": 1.09543333,
-        "R1": 1.09974993,
-        "R2": 1.10241673,
-        "R3": 1.10673333,
-        "S1": 1.09111673,
-        "S2": 1.08844993,
-        "S3": 1.08413333
+        "PP": 1.10133333,
+        "R1": 1.10538253,
+        "R2": 1.10788413,
+        "R3": 1.11193333,
+        "S1": 1.09728413,
+        "S2": 1.09478253,
+        "S3": 1.09073333
       },
-      "pp_confluence_pct": 0.3148,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 1.10673333,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 1.10241673,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 1.09974993,
-          "result": "BREAKOUT"
-        }
-      ]
+      "pp_confluence_pct": 0.2213,
+      "events": []
     },
     {
       "symbol": "DOGE/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 0.07116,
-        "high": 0.07367,
-        "low": 0.07113,
-        "close": 0.07277
+        "time": 1785009600000,
+        "open": 0.07279,
+        "high": 0.07294,
+        "low": 0.07243,
+        "close": 0.07251
       },
       "daily_pivot": {
         "PP": 0.06926667,
@@ -259,58 +182,27 @@
         "S3": 0.06646333
       },
       "haoshoku_pivot": {
-        "PP": 0.07066667,
-        "R1": 0.07146123,
-        "R2": 0.07195211,
-        "R3": 0.07274667,
-        "S1": 0.06987211,
-        "S2": 0.06938123,
-        "S3": 0.06858667
+        "PP": 0.07252667,
+        "R1": 0.07349695,
+        "R2": 0.07409639,
+        "R3": 0.07506667,
+        "S1": 0.07155639,
+        "S2": 0.07095695,
+        "S3": 0.06998667
       },
-      "pp_confluence_pct": 1.9239,
-      "events": [
-        {
-          "source": "Daily",
-          "level": "R3",
-          "price_level": 0.07231333,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Daily",
-          "level": "R2",
-          "price_level": 0.07121667,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 0.07274667,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 0.07195211,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 0.07146123,
-          "result": "BREAKOUT"
-        }
-      ]
+      "pp_confluence_pct": 4.4959,
+      "events": []
     },
     {
       "symbol": "ADA/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 0.1646,
-        "high": 0.1669,
-        "low": 0.1639,
-        "close": 0.1654
+        "time": 1785009600000,
+        "open": 0.1654,
+        "high": 0.1655,
+        "low": 0.1646,
+        "close": 0.1648
       },
       "daily_pivot": {
         "PP": 0.16483333,
@@ -322,46 +214,27 @@
         "S3": 0.15516667
       },
       "haoshoku_pivot": {
-        "PP": 0.16393333,
-        "R1": 0.16485013,
-        "R2": 0.16541653,
-        "R3": 0.16633333,
-        "S1": 0.16301653,
-        "S2": 0.16245013,
-        "S3": 0.16153333
+        "PP": 0.1654,
+        "R1": 0.166546,
+        "R2": 0.167254,
+        "R3": 0.1684,
+        "S1": 0.164254,
+        "S2": 0.163546,
+        "S3": 0.1624
       },
-      "pp_confluence_pct": 0.5441,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 0.16633333,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 0.16541653,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 0.16485013,
-          "result": "BREAKOUT"
-        }
-      ]
+      "pp_confluence_pct": 0.3439,
+      "events": []
     },
     {
       "symbol": "NEAR/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 1.796,
-        "high": 1.801,
-        "low": 1.787,
-        "close": 1.799
+        "time": 1785009600000,
+        "open": 1.795,
+        "high": 1.799,
+        "low": 1.793,
+        "close": 1.796
       },
       "daily_pivot": {
         "PP": 1.83533333,
@@ -373,34 +246,27 @@
         "S3": 1.62066667
       },
       "haoshoku_pivot": {
-        "PP": 1.79333333,
-        "R1": 1.79982733,
-        "R2": 1.80383933,
-        "R3": 1.81033333,
-        "S1": 1.78683933,
-        "S2": 1.78282733,
-        "S3": 1.77633333
+        "PP": 1.79466667,
+        "R1": 1.80001467,
+        "R2": 1.80331867,
+        "R3": 1.80866667,
+        "S1": 1.78931867,
+        "S2": 1.78601467,
+        "S3": 1.78066667
       },
-      "pp_confluence_pct": 2.3346,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 1.79982733,
-          "result": "REJECTION"
-        }
-      ]
+      "pp_confluence_pct": 2.2643,
+      "events": []
     },
     {
       "symbol": "ENA/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 0.086,
-        "high": 0.08689,
-        "low": 0.08584,
-        "close": 0.08605
+        "time": 1785009600000,
+        "open": 0.08593,
+        "high": 0.08612,
+        "low": 0.08583,
+        "close": 0.08595
       },
       "daily_pivot": {
         "PP": 0.08787667,
@@ -412,46 +278,27 @@
         "S3": 0.07819333
       },
       "haoshoku_pivot": {
-        "PP": 0.08617333,
-        "R1": 0.08649803,
-        "R2": 0.08669863,
-        "R3": 0.08702333,
-        "S1": 0.08584863,
-        "S2": 0.08564803,
-        "S3": 0.08532333
+        "PP": 0.08619667,
+        "R1": 0.08661687,
+        "R2": 0.08687647,
+        "R3": 0.08729667,
+        "S1": 0.08577647,
+        "S2": 0.08551687,
+        "S3": 0.08509667
       },
-      "pp_confluence_pct": 1.9795,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 0.08669863,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 0.08649803,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "S1",
-          "price_level": 0.08584863,
-          "result": "REJECTION"
-        }
-      ]
+      "pp_confluence_pct": 1.9546,
+      "events": []
     },
     {
       "symbol": "WLD/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 0.3465,
-        "high": 0.3522,
-        "low": 0.3456,
-        "close": 0.3495
+        "time": 1785009600000,
+        "open": 0.3476,
+        "high": 0.3482,
+        "low": 0.3472,
+        "close": 0.3474
       },
       "daily_pivot": {
         "PP": 0.357,
@@ -463,40 +310,27 @@
         "S3": 0.2791
       },
       "haoshoku_pivot": {
-        "PP": 0.3465,
-        "R1": 0.3498616,
-        "R2": 0.3519384,
-        "R3": 0.3553,
-        "S1": 0.3431384,
-        "S2": 0.3410616,
-        "S3": 0.3377
+        "PP": 0.3485,
+        "R1": 0.3510212,
+        "R2": 0.3525788,
+        "R3": 0.3551,
+        "S1": 0.3459788,
+        "S2": 0.3444212,
+        "S3": 0.3419
       },
-      "pp_confluence_pct": 3.0043,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 0.3519384,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 0.3498616,
-          "result": "REJECTION"
-        }
-      ]
+      "pp_confluence_pct": 2.4467,
+      "events": []
     },
     {
       "symbol": "JTO/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 0.5977,
-        "high": 0.6017,
-        "low": 0.595,
-        "close": 0.5951
+        "time": 1785009600000,
+        "open": 0.5923,
+        "high": 0.5933,
+        "low": 0.5918,
+        "close": 0.5921
       },
       "daily_pivot": {
         "PP": 0.60936667,
@@ -508,34 +342,27 @@
         "S3": 0.52163333
       },
       "haoshoku_pivot": {
-        "PP": 0.5974,
-        "R1": 0.6013346,
-        "R2": 0.6037654,
-        "R3": 0.6077,
-        "S1": 0.5934654,
-        "S2": 0.5910346,
-        "S3": 0.5871
+        "PP": 0.59493333,
+        "R1": 0.59905893,
+        "R2": 0.60160773,
+        "R3": 0.60573333,
+        "S1": 0.59080773,
+        "S2": 0.58825893,
+        "S3": 0.58413333
       },
-      "pp_confluence_pct": 2.0109,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 0.6013346,
-          "result": "REJECTION"
-        }
-      ]
+      "pp_confluence_pct": 2.4377,
+      "events": []
     },
     {
       "symbol": "HYPE/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1784995200000,
-        "open": 57.742,
-        "high": 58.52,
-        "low": 57.617,
-        "close": 58.359
+        "time": 1785009600000,
+        "open": 58.064,
+        "high": 58.248,
+        "low": 57.815,
+        "close": 58.055
       },
       "daily_pivot": {
         "PP": 57.71833333,
@@ -547,35 +374,16 @@
         "S3": 53.40066667
       },
       "haoshoku_pivot": {
-        "PP": 57.63466667,
-        "R1": 57.93835667,
-        "R2": 58.12597667,
-        "R3": 58.42966667,
-        "S1": 57.33097667,
-        "S2": 57.14335667,
-        "S3": 56.83966667
+        "PP": 58.067,
+        "R1": 58.411946,
+        "R2": 58.625054,
+        "R3": 58.97,
+        "S1": 57.722054,
+        "S2": 57.508946,
+        "S3": 57.164
       },
-      "pp_confluence_pct": 0.1434,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 58.42966667,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 58.12597667,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 57.93835667,
-          "result": "BREAKOUT"
-        }
-      ]
+      "pp_confluence_pct": 0.6006,
+      "events": []
     }
   ]
 }
