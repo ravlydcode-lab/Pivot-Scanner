@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-07-25T00:38:43.234984+00:00",
+  "symbols": [
+    {
+      "symbol": "BTC/USDT:USDT",
+      "error": "binanceusdm GET https://fapi.binance.com/fapi/v1/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}"
+    },
+    {
+      "symbol": "ETH/USDT:USDT",
+      "error": "binanceusdm GET https://fapi.binance.com/fapi/v1/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}"
+    },
+    {
+      "symbol": "SOL/USDT:USDT",
+      "error": "binanceusdm GET https://fapi.binance.com/fapi/v1/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}"
+    }
+  ]
+}
