@@ -137,6 +137,21 @@ def scan_symbol(symbol):
     }
 
 
+STATE_FILE = "data/state.json"
+
+
+def load_state():
+    if os.path.exists(STATE_FILE):
+        with open(STATE_FILE) as f:
+            return json.load(f)
+    return {}
+
+
+def save_state(state):
+    with open(STATE_FILE, "w") as f:
+        json.dump(state, f, indent=2)
+
+
 def main():
     results = {"generated_at": datetime.now(timezone.utc).isoformat(), "symbols": []}
 
@@ -148,21 +163,29 @@ def main():
 
     os.makedirs("data", exist_ok=True)
 
-    # Snapshot terkini (ditimpa tiap run - buat cek cepat)
+    # Snapshot terkini (ditimpa tiap run - buat cek cepat, boleh sering di-update)
     with open("data/latest.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
 
-    # Log historis (DITAMBAH tiap run, tidak pernah ditimpa - ini yang dipakai untuk statistik)
+    # Log historis - HANYA ditambah kalau candle-nya benar-benar baru (sudah closed),
+    # bukan setiap 30 menit polling candle yang sama yang masih berjalan.
+    state = load_state()
+    new_rows = 0
     with open("data/events_log.jsonl", "a") as f:
         for s in results["symbols"]:
             if "error" in s:
                 continue
+            candle_time = s["last_candle"]["time"]
+            if state.get(s["symbol"]) == candle_time:
+                continue  # candle ini sudah pernah dicatat, skip
+
             for ev in s["events"]:
                 row = {
                     "generated_at": results["generated_at"],
                     "symbol": s["symbol"],
                     "exchange_daily": s["exchange_daily"],
                     "exchange_haoshoku": s["exchange_haoshoku"],
+                    "candle_time": candle_time,
                     "close": s["last_candle"]["close"],
                     "pp_confluence_pct": s["pp_confluence_pct"],
                     "source": ev["source"],
@@ -171,8 +194,12 @@ def main():
                     "result": ev["result"],
                 }
                 f.write(json.dumps(row, default=str) + "\n")
+                new_rows += 1
 
-    print(f"Scan selesai: {len(SYMBOLS)} pair, disimpan ke data/latest.json + data/events_log.jsonl")
+            state[s["symbol"]] = candle_time
+
+    save_state(state)
+    print(f"Scan selesai: {len(SYMBOLS)} pair, {new_rows} event baru dicatat (sisanya candle lama/duplikat di-skip)")
 
 
 if __name__ == "__main__":
