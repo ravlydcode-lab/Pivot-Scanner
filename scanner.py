@@ -66,15 +66,30 @@ SYMBOLS = [
 LEVELS = ["R3", "R2", "R1", "S1", "S2", "S3"]
 
 
-def fetch_ohlcv(exchange, symbol, timeframe, limit=3):
-    raw = exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
-    return pd.DataFrame(raw, columns=["ts", "open", "high", "low", "close", "volume"])
+# Dicoba berurutan - Binance Futures kadang diblokir dari lokasi server tertentu
+# (termasuk server GitHub Actions gratis), jadi kita fallback ke exchange lain.
+EXCHANGE_IDS = ["binanceusdm", "okx", "bybit"]
 
 
-def scan_symbol(exchange, symbol):
+def fetch_ohlcv_with_fallback(symbol, timeframe, limit=3):
+    """Coba tiap exchange di EXCHANGE_IDS berurutan, pakai yang pertama berhasil."""
+    last_err = None
+    for ex_id in EXCHANGE_IDS:
+        try:
+            exchange = getattr(ccxt, ex_id)({"enableRateLimit": True})
+            raw = exchange.fetch_ohlcv(symbol, timeframe=timeframe, limit=limit)
+            df = pd.DataFrame(raw, columns=["ts", "open", "high", "low", "close", "volume"])
+            return ex_id, df
+        except Exception as e:
+            last_err = e
+            continue
+    raise RuntimeError(f"Semua exchange gagal untuk {symbol} {timeframe}: {last_err}")
+
+
+def scan_symbol(symbol):
     # Ambil beberapa candle terakhir supaya "candle sebelumnya" pasti sudah closed
-    df_4h = fetch_ohlcv(exchange, symbol, "4h", limit=3)
-    df_1d = fetch_ohlcv(exchange, symbol, "1d", limit=3)
+    ex_used_4h, df_4h = fetch_ohlcv_with_fallback(symbol, "4h", limit=3)
+    ex_used_1d, df_1d = fetch_ohlcv_with_fallback(symbol, "1d", limit=3)
 
     last_4h = df_4h.iloc[-1]      # candle 4H yang sedang berjalan/baru closed
     prev_4h = df_4h.iloc[-2]      # candle 4H sebelumnya -> sumber Haoshoku (auto-TF)
@@ -95,6 +110,8 @@ def scan_symbol(exchange, symbol):
 
     return {
         "symbol": symbol,
+        "exchange_daily": ex_used_1d,
+        "exchange_haoshoku": ex_used_4h,
         "last_candle": {
             "time": int(last_4h["ts"]),
             "open": last_4h["open"], "high": last_4h["high"],
@@ -108,12 +125,11 @@ def scan_symbol(exchange, symbol):
 
 
 def main():
-    exchange = ccxt.binanceusdm({"enableRateLimit": True})
     results = {"generated_at": datetime.now(timezone.utc).isoformat(), "symbols": []}
 
     for sym in SYMBOLS:
         try:
-            results["symbols"].append(scan_symbol(exchange, sym))
+            results["symbols"].append(scan_symbol(sym))
         except Exception as e:
             results["symbols"].append({"symbol": sym, "error": str(e)})
 
