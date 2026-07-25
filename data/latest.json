@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T20:26:28.280320+00:00",
+  "generated_at": "2026-07-25T21:23:30.744582+00:00",
   "symbols": [
     {
       "symbol": "BTC/USDT:USDT",
@@ -9,8 +9,8 @@
         "time": 1785009600000,
         "open": 64362.8,
         "high": 64368.5,
-        "low": 64310.8,
-        "close": 64339.3
+        "low": 64225.2,
+        "close": 64245.6
       },
       "daily_pivot": {
         "PP": 64533.43333333,
@@ -30,7 +30,7 @@
         "S2": 64086.63326667,
         "S3": 63958.16666667
       },
-      "pp_confluence_pct": 0.3714,
+      "pp_confluence_pct": 0.372,
       "events": []
     },
     {
@@ -41,8 +41,8 @@
         "time": 1785009600000,
         "open": 1873.91,
         "high": 1874.0,
-        "low": 1869.62,
-        "close": 1871.33
+        "low": 1866.21,
+        "close": 1869.35
       },
       "daily_pivot": {
         "PP": 1872.21333333,
@@ -63,7 +63,14 @@
         "S3": 1858.47
       },
       "pp_confluence_pct": 0.0387,
-      "events": []
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 1866.51636,
+          "result": "REJECTION"
+        }
+      ]
     },
     {
       "symbol": "SOL/USDT:USDT",
@@ -73,8 +80,8 @@
         "time": 1785009600000,
         "open": 74.51,
         "high": 74.53,
-        "low": 74.38,
-        "close": 74.43
+        "low": 74.24,
+        "close": 74.29
       },
       "daily_pivot": {
         "PP": 74.56333333,
@@ -94,7 +101,7 @@
         "S2": 74.01448,
         "S3": 73.77
       },
-      "pp_confluence_pct": 0.206,
+      "pp_confluence_pct": 0.2064,
       "events": []
     },
     {
@@ -105,8 +112,8 @@
         "time": 1785009600000,
         "open": 568.5,
         "high": 568.9,
-        "low": 568.1,
-        "close": 568.6
+        "low": 568.0,
+        "close": 568.4
       },
       "daily_pivot": {
         "PP": 563.8,
@@ -126,7 +133,7 @@
         "S2": 566.26473333,
         "S3": 565.23333333
       },
-      "pp_confluence_pct": 0.7269,
+      "pp_confluence_pct": 0.7272,
       "events": []
     },
     {
@@ -137,8 +144,8 @@
         "time": 1785009600000,
         "open": 1.1,
         "high": 1.1005,
-        "low": 1.0989,
-        "close": 1.0997
+        "low": 1.0964,
+        "close": 1.0972
       },
       "daily_pivot": {
         "PP": 1.0989,
@@ -158,8 +165,15 @@
         "S2": 1.09478253,
         "S3": 1.09073333
       },
-      "pp_confluence_pct": 0.2213,
-      "events": []
+      "pp_confluence_pct": 0.2218,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 1.09728413,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "DOGE/USDT:USDT",
@@ -169,8 +183,8 @@
         "time": 1785009600000,
         "open": 0.07279,
         "high": 0.07294,
-        "low": 0.07243,
-        "close": 0.07251
+        "low": 0.0721,
+        "close": 0.07226
       },
       "daily_pivot": {
         "PP": 0.06926667,
@@ -190,8 +204,15 @@
         "S2": 0.07095695,
         "S3": 0.06998667
       },
-      "pp_confluence_pct": 4.4959,
-      "events": []
+      "pp_confluence_pct": 4.5115,
+      "events": [
+        {
+          "source": "Daily",
+          "level": "R3",
+          "price_level": 0.07231333,
+          "result": "REJECTION"
+        }
+      ]
     },
     {
       "symbol": "ADA/USDT:USDT",
@@ -201,8 +222,8 @@
         "time": 1785009600000,
         "open": 0.1654,
         "high": 0.1655,
-        "low": 0.1646,
-        "close": 0.1648
+        "low": 0.1638,
+        "close": 0.1639
       },
       "daily_pivot": {
         "PP": 0.16483333,
@@ -222,8 +243,15 @@
         "S2": 0.163546,
         "S3": 0.1624
       },
-      "pp_confluence_pct": 0.3439,
-      "events": []
+      "pp_confluence_pct": 0.3457,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 0.164254,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "NEAR/USDT:USDT",
@@ -233,8 +261,8 @@
         "time": 1785009600000,
         "open": 1.795,
         "high": 1.799,
-        "low": 1.793,
-        "close": 1.796
+        "low": 1.788,
+        "close": 1.789
       },
       "daily_pivot": {
         "PP": 1.83533333,
@@ -254,8 +282,15 @@
         "S2": 1.78601467,
         "S3": 1.78066667
       },
-      "pp_confluence_pct": 2.2643,
-      "events": []
+      "pp_confluence_pct": 2.2732,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 1.78931867,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "ENA/USDT:USDT",
@@ -264,9 +299,9 @@
       "last_candle": {
         "time": 1785009600000,
         "open": 0.08593,
-        "high": 0.08612,
-        "low": 0.08583,
-        "close": 0.08595
+        "high": 0.08643,
+        "low": 0.08579,
+        "close": 0.08585
       },
       "daily_pivot": {
         "PP": 0.08787667,
@@ -286,7 +321,7 @@
         "S2": 0.08551687,
         "S3": 0.08509667
       },
-      "pp_confluence_pct": 1.9546,
+      "pp_confluence_pct": 1.9569,
       "events": []
     },
     {
@@ -297,8 +332,8 @@
         "time": 1785009600000,
         "open": 0.3476,
         "high": 0.3482,
-        "low": 0.3472,
-        "close": 0.3474
+        "low": 0.3458,
+        "close": 0.3465
       },
       "daily_pivot": {
         "PP": 0.357,
@@ -318,8 +353,15 @@
         "S2": 0.3444212,
         "S3": 0.3419
       },
-      "pp_confluence_pct": 2.4467,
-      "events": []
+      "pp_confluence_pct": 2.4531,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 0.3459788,
+          "result": "REJECTION"
+        }
+      ]
     },
     {
       "symbol": "JTO/USDT:USDT",
@@ -329,8 +371,8 @@
         "time": 1785009600000,
         "open": 0.5923,
         "high": 0.5933,
-        "low": 0.5918,
-        "close": 0.5921
+        "low": 0.5896,
+        "close": 0.59
       },
       "daily_pivot": {
         "PP": 0.60936667,
@@ -350,8 +392,15 @@
         "S2": 0.58825893,
         "S3": 0.58413333
       },
-      "pp_confluence_pct": 2.4377,
-      "events": []
+      "pp_confluence_pct": 2.4463,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 0.59080773,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "HYPE/USDT:USDT",
@@ -362,7 +411,7 @@
         "open": 58.064,
         "high": 58.248,
         "low": 57.815,
-        "close": 58.055
+        "close": 57.915
       },
       "daily_pivot": {
         "PP": 57.71833333,
@@ -382,7 +431,7 @@
         "S2": 57.508946,
         "S3": 57.164
       },
-      "pp_confluence_pct": 0.6006,
+      "pp_confluence_pct": 0.602,
       "events": []
     }
   ]
