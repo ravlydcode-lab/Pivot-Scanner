@@ -1,17 +1,134 @@
 {
-  "generated_at": "2026-07-25T00:38:43.234984+00:00",
+  "generated_at": "2026-07-25T00:46:11.649370+00:00",
   "symbols": [
     {
       "symbol": "BTC/USDT:USDT",
-      "error": "binanceusdm GET https://fapi.binance.com/fapi/v1/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}"
+      "exchange_daily": "okx",
+      "exchange_haoshoku": "okx",
+      "last_candle": {
+        "time": 1784937600000,
+        "open": 64119.6,
+        "high": 64148.8,
+        "low": 64041.3,
+        "close": 64053.0
+      },
+      "daily_pivot": {
+        "PP": 64533.43333333,
+        "R1": 65366.86666667,
+        "R2": 66614.03333333,
+        "R3": 67447.46666667,
+        "S1": 63286.26666667,
+        "S2": 62452.83333333,
+        "S3": 61205.66666667
+      },
+      "haoshoku_pivot": {
+        "PP": 64153.06666667,
+        "R1": 64214.37766667,
+        "R2": 64252.25566667,
+        "R3": 64313.56666667,
+        "S1": 64091.75566667,
+        "S2": 64053.87766667,
+        "S3": 63992.56666667
+      },
+      "pp_confluence_pct": 0.5938,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 64091.75566667,
+          "result": "BREAKOUT"
+        },
+        {
+          "source": "Haos",
+          "level": "S2",
+          "price_level": 64053.87766667,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "ETH/USDT:USDT",
-      "error": "binanceusdm GET https://fapi.binance.com/fapi/v1/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}"
+      "exchange_daily": "okx",
+      "exchange_haoshoku": "okx",
+      "last_candle": {
+        "time": 1784937600000,
+        "open": 1860.74,
+        "high": 1863.95,
+        "low": 1856.13,
+        "close": 1856.79
+      },
+      "daily_pivot": {
+        "PP": 1872.21333333,
+        "R1": 1897.52666667,
+        "R2": 1934.30333333,
+        "R3": 1959.61666667,
+        "S1": 1835.43666667,
+        "S2": 1810.12333333,
+        "S3": 1773.34666667
+      },
+      "haoshoku_pivot": {
+        "PP": 1860.32,
+        "R1": 1863.65486,
+        "R2": 1865.71514,
+        "R3": 1869.05,
+        "S1": 1856.98514,
+        "S2": 1854.92486,
+        "S3": 1851.59
+      },
+      "pp_confluence_pct": 0.6405,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "R1",
+          "price_level": 1863.65486,
+          "result": "REJECTION"
+        },
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 1856.98514,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "SOL/USDT:USDT",
-      "error": "binanceusdm GET https://fapi.binance.com/fapi/v1/exchangeInfo 451  {\n  \"code\": 0,\n  \"msg\": \"Service unavailable from a restricted location according to 'b. Eligibility' in https://www.binance.com/en/terms. Please contact customer service if you believe you received this message in error.\"\n}"
+      "exchange_daily": "okx",
+      "exchange_haoshoku": "okx",
+      "last_candle": {
+        "time": 1784937600000,
+        "open": 73.91,
+        "high": 74.11,
+        "low": 73.88,
+        "close": 73.94
+      },
+      "daily_pivot": {
+        "PP": 74.56333333,
+        "R1": 75.74666667,
+        "R2": 77.58333333,
+        "R3": 78.76666667,
+        "S1": 72.72666667,
+        "S2": 71.54333333,
+        "S3": 69.70666667
+      },
+      "haoshoku_pivot": {
+        "PP": 73.75666667,
+        "R1": 73.98586667,
+        "R2": 74.12746667,
+        "R3": 74.35666667,
+        "S1": 73.52746667,
+        "S2": 73.38586667,
+        "S3": 73.15666667
+      },
+      "pp_confluence_pct": 1.091,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "R1",
+          "price_level": 73.98586667,
+          "result": "REJECTION"
+        }
+      ]
     }
   ]
 }
