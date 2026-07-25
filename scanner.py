@@ -57,10 +57,23 @@ def classify_touch(high, low, close, level_price, is_resistance):
 # ---------------------------------------------------------------------------
 
 SYMBOLS = [
+    # Large-cap (pembanding, sesuai keputusan sebelumnya - large-cap vs altcoin)
     "BTC/USDT:USDT",
     "ETH/USDT:USDT",
     "SOL/USDT:USDT",
-    # tambah pair lain di sini, misal "KITE/USDT:USDT" kalau sudah listing futures
+    "BNB/USDT:USDT",
+    "XRP/USDT:USDT",
+    # Altcoin established
+    "DOGE/USDT:USDT",
+    "ADA/USDT:USDT",
+    # Altcoin yang sudah kita analisis manual sebelumnya - biar bisa dibandingkan
+    "NEAR/USDT:USDT",
+    "ENA/USDT:USDT",
+    "WLD/USDT:USDT",
+    "JTO/USDT:USDT",
+    "HYPE/USDT:USDT",
+    # Kalau ada pair yang tidak listing di exchange manapun (Binance/OKX/Bybit),
+    # otomatis tercatat sebagai error di output - tidak bikin script berhenti.
 ]
 
 LEVELS = ["R3", "R2", "R1", "S1", "S2", "S3"]
@@ -134,10 +147,32 @@ def main():
             results["symbols"].append({"symbol": sym, "error": str(e)})
 
     os.makedirs("data", exist_ok=True)
+
+    # Snapshot terkini (ditimpa tiap run - buat cek cepat)
     with open("data/latest.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
 
-    print(f"Scan selesai: {len(SYMBOLS)} pair, disimpan ke data/latest.json")
+    # Log historis (DITAMBAH tiap run, tidak pernah ditimpa - ini yang dipakai untuk statistik)
+    with open("data/events_log.jsonl", "a") as f:
+        for s in results["symbols"]:
+            if "error" in s:
+                continue
+            for ev in s["events"]:
+                row = {
+                    "generated_at": results["generated_at"],
+                    "symbol": s["symbol"],
+                    "exchange_daily": s["exchange_daily"],
+                    "exchange_haoshoku": s["exchange_haoshoku"],
+                    "close": s["last_candle"]["close"],
+                    "pp_confluence_pct": s["pp_confluence_pct"],
+                    "source": ev["source"],
+                    "level": ev["level"],
+                    "price_level": ev["price_level"],
+                    "result": ev["result"],
+                }
+                f.write(json.dumps(row, default=str) + "\n")
+
+    print(f"Scan selesai: {len(SYMBOLS)} pair, disimpan ke data/latest.json + data/events_log.jsonl")
 
 
 if __name__ == "__main__":
