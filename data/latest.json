@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T20:15:54.872764+00:00",
+  "generated_at": "2026-07-27T21:35:59.437671+00:00",
   "symbols": [
     {
       "symbol": "BTC/USDT:USDT",
@@ -9,8 +9,8 @@
         "time": 1785182400000,
         "open": 64957.2,
         "high": 65028.6,
-        "low": 64910.0,
-        "close": 64910.1
+        "low": 64791.7,
+        "close": 64823.7
       },
       "daily_pivot": {
         "PP": 65070.43333333,
@@ -30,7 +30,7 @@
         "S2": 64477.41813333,
         "S3": 64257.23333333
       },
-      "pp_confluence_pct": 0.3648,
+      "pp_confluence_pct": 0.3653,
       "events": []
     },
     {
@@ -41,8 +41,8 @@
         "time": 1785182400000,
         "open": 1947.49,
         "high": 1949.6,
-        "low": 1943.8,
-        "close": 1943.81
+        "low": 1941.04,
+        "close": 1942.09
       },
       "daily_pivot": {
         "PP": 1930.85,
@@ -62,7 +62,7 @@
         "S2": 1920.29853333,
         "S3": 1907.46333333
       },
-      "pp_confluence_pct": 0.5254,
+      "pp_confluence_pct": 0.5259,
       "events": []
     },
     {
@@ -72,9 +72,9 @@
       "last_candle": {
         "time": 1785182400000,
         "open": 75.95,
-        "high": 76.07,
-        "low": 75.8,
-        "close": 75.81
+        "high": 76.11,
+        "low": 75.53,
+        "close": 75.57
       },
       "daily_pivot": {
         "PP": 76.07666667,
@@ -94,7 +94,7 @@
         "S2": 75.05166,
         "S3": 74.62
       },
-      "pp_confluence_pct": 0.4309,
+      "pp_confluence_pct": 0.4323,
       "events": []
     },
     {
@@ -105,8 +105,8 @@
         "time": 1785182400000,
         "open": 575.5,
         "high": 575.7,
-        "low": 575.1,
-        "close": 575.3
+        "low": 573.0,
+        "close": 573.3
       },
       "daily_pivot": {
         "PP": 573.33333333,
@@ -126,7 +126,7 @@
         "S2": 567.8088,
         "S3": 564.6
       },
-      "pp_confluence_pct": 0.0579,
+      "pp_confluence_pct": 0.0581,
       "events": []
     },
     {
@@ -137,8 +137,8 @@
         "time": 1785182400000,
         "open": 1.0917,
         "high": 1.0932,
-        "low": 1.09,
-        "close": 1.0905
+        "low": 1.0869,
+        "close": 1.0869
       },
       "daily_pivot": {
         "PP": 1.1078,
@@ -158,7 +158,7 @@
         "S2": 1.084211,
         "S3": 1.0802
       },
-      "pp_confluence_pct": 1.5681,
+      "pp_confluence_pct": 1.5733,
       "events": []
     },
     {
@@ -168,9 +168,9 @@
       "last_candle": {
         "time": 1785182400000,
         "open": 0.07201,
-        "high": 0.07208,
-        "low": 0.07185,
-        "close": 0.07186
+        "high": 0.07217,
+        "low": 0.07175,
+        "close": 0.07185
       },
       "daily_pivot": {
         "PP": 0.07297,
@@ -190,7 +190,7 @@
         "S2": 0.07111166,
         "S3": 0.07068
       },
-      "pp_confluence_pct": 1.6142,
+      "pp_confluence_pct": 1.6145,
       "events": [
         {
           "source": "Daily",
@@ -207,9 +207,9 @@
       "last_candle": {
         "time": 1785182400000,
         "open": 0.1588,
-        "high": 0.159,
-        "low": 0.1586,
-        "close": 0.1589
+        "high": 0.1591,
+        "low": 0.1583,
+        "close": 0.1584
       },
       "daily_pivot": {
         "PP": 0.16543333,
@@ -229,7 +229,7 @@
         "S2": 0.15672653,
         "S3": 0.15573333
       },
-      "pp_confluence_pct": 4.4682,
+      "pp_confluence_pct": 4.4823,
       "events": []
     },
     {
@@ -239,9 +239,9 @@
       "last_candle": {
         "time": 1785182400000,
         "open": 1.742,
-        "high": 1.745,
-        "low": 1.735,
-        "close": 1.738
+        "high": 1.747,
+        "low": 1.728,
+        "close": 1.729
       },
       "daily_pivot": {
         "PP": 1.821,
@@ -261,7 +261,7 @@
         "S2": 1.71292,
         "S3": 1.69
       },
-      "pp_confluence_pct": 4.0852,
+      "pp_confluence_pct": 4.1064,
       "events": [
         {
           "source": "Daily",
@@ -278,9 +278,9 @@
       "last_candle": {
         "time": 1785182400000,
         "open": 0.08816,
-        "high": 0.08834,
-        "low": 0.08777,
-        "close": 0.08778
+        "high": 0.08836,
+        "low": 0.0866,
+        "close": 0.08672
       },
       "daily_pivot": {
         "PP": 0.08851,
@@ -300,8 +300,21 @@
         "S2": 0.0867541,
         "S3": 0.08578
       },
-      "pp_confluence_pct": 0.2051,
-      "events": []
+      "pp_confluence_pct": 0.2076,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 0.0873559,
+          "result": "BREAKOUT"
+        },
+        {
+          "source": "Haos",
+          "level": "S2",
+          "price_level": 0.0867541,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "WLD/USDT:USDT",
@@ -311,8 +324,8 @@
         "time": 1785182400000,
         "open": 0.3422,
         "high": 0.3425,
-        "low": 0.3405,
-        "close": 0.3408
+        "low": 0.3381,
+        "close": 0.3383
       },
       "daily_pivot": {
         "PP": 0.34776667,
@@ -332,8 +345,15 @@
         "S2": 0.337801,
         "S3": 0.3357
       },
-      "pp_confluence_pct": 1.9268,
-      "events": []
+      "pp_confluence_pct": 1.9411,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 0.339099,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "JTO/USDT:USDT",
@@ -343,8 +363,8 @@
         "time": 1785182400000,
         "open": 0.5848,
         "high": 0.5855,
-        "low": 0.5815,
-        "close": 0.5817
+        "low": 0.5752,
+        "close": 0.579
       },
       "daily_pivot": {
         "PP": 0.5837,
@@ -364,8 +384,15 @@
         "S2": 0.57428527,
         "S3": 0.56576667
       },
-      "pp_confluence_pct": 0.7507,
-      "events": []
+      "pp_confluence_pct": 0.7542,
+      "events": [
+        {
+          "source": "Haos",
+          "level": "S1",
+          "price_level": 0.57954807,
+          "result": "BREAKOUT"
+        }
+      ]
     },
     {
       "symbol": "HYPE/USDT:USDT",
@@ -375,8 +402,8 @@
         "time": 1785182400000,
         "open": 57.272,
         "high": 57.29,
-        "low": 56.918,
-        "close": 57.017
+        "low": 56.812,
+        "close": 56.866
       },
       "daily_pivot": {
         "PP": 59.18866667,
@@ -396,7 +423,7 @@
         "S2": 56.13007133,
         "S3": 55.49633333
       },
-      "pp_confluence_pct": 3.5662,
+      "pp_confluence_pct": 3.5757,
       "events": []
     }
   ]
