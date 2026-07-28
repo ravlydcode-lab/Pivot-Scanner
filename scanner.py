@@ -53,6 +53,112 @@ def classify_touch(high, low, close, level_price, is_resistance):
 
 
 # ---------------------------------------------------------------------------
+# SMC ORDER BLOCK (Bu-OB / Be-OB) - port dari Pine Script yang sudah kita
+# validasi & perkuat di awal project ini (body ratio, rejection wick, volume,
+# displacement ATR, konfluensi pivot zigzag). Dievaluasi HANYA pada candle
+# yang sudah pasti closed (bukan candle yang masih berjalan), persis prinsip
+# barstate.isconfirmed di Pine - supaya tidak repaint.
+# ---------------------------------------------------------------------------
+
+OB_LOOKBACK = 10
+OB_ATR_PERIOD = 14
+OB_VOL_PERIOD = 20
+OB_ZIGZAG_LEN = 9
+OB_MIN_BODY_RATIO = 0.35
+OB_MIN_WICK_RATIO = 0.20
+OB_VOL_MULT = 1.2
+OB_MIN_DISP_ATR = 0.4
+OB_REQUIRE_PIVOT = True
+
+# Toleransi jarak candle-OB ke level Pivot/Haoshoku terdekat, supaya dianggap
+# "sinyal gabungan" (dua sumber independen saling menguatkan).
+OB_LEVEL_TOLERANCE_PCT = 0.5
+
+
+def true_range(df):
+    prev_close = df["close"].shift(1)
+    return pd.concat([
+        df["high"] - df["low"],
+        (df["high"] - prev_close).abs(),
+        (df["low"] - prev_close).abs(),
+    ], axis=1).max(axis=1)
+
+
+def compute_ob(hist):
+    """
+    hist = seluruh candle yang SUDAH CLOSED (candle yang masih berjalan tidak
+    diikutkan), urut dari lama ke baru. Baris terakhir hist = candle yang
+    dievaluasi untuk OB.
+    """
+    min_len = max(OB_LOOKBACK, OB_ATR_PERIOD, OB_VOL_PERIOD, OB_ZIGZAG_LEN) + 2
+    if len(hist) < min_len:
+        return None  # data historis belum cukup untuk hitung indikator rolling
+
+    tr = true_range(hist)
+    atr = tr.rolling(OB_ATR_PERIOD).mean()
+    vol_ma = hist["volume"].rolling(OB_VOL_PERIOD).mean()
+    swing_low = hist["low"].rolling(OB_LOOKBACK).min()
+    swing_high = hist["high"].rolling(OB_LOOKBACK).max()
+    to_down = hist["low"] <= hist["low"].rolling(OB_ZIGZAG_LEN).min()
+    to_up = hist["high"] >= hist["high"].rolling(OB_ZIGZAG_LEN).max()
+
+    row = hist.iloc[-1]
+    body_size = abs(row["close"] - row["open"])
+    candle_range = row["high"] - row["low"]
+    body_ratio = body_size / candle_range if candle_range > 0 else 0.0
+    lower_wick = min(row["open"], row["close"]) - row["low"]
+    upper_wick = row["high"] - max(row["open"], row["close"])
+    lower_wick_ratio = lower_wick / candle_range if candle_range > 0 else 0.0
+    upper_wick_ratio = upper_wick / candle_range if candle_range > 0 else 0.0
+
+    is_bull = row["close"] > row["open"]
+    is_bear = row["close"] < row["open"]
+    strong_body = body_ratio >= OB_MIN_BODY_RATIO
+    disp_ok = body_size >= atr.iloc[-1] * OB_MIN_DISP_ATR
+    vol_ok = row["volume"] >= vol_ma.iloc[-1] * OB_VOL_MULT
+    bull_rej = lower_wick_ratio >= OB_MIN_WICK_RATIO
+    bear_rej = upper_wick_ratio >= OB_MIN_WICK_RATIO
+    pivot_low_ok = (not OB_REQUIRE_PIVOT) or bool(to_down.iloc[-1])
+    pivot_high_ok = (not OB_REQUIRE_PIVOT) or bool(to_up.iloc[-1])
+
+    is_bu_ob = bool(is_bull and row["low"] <= swing_low.iloc[-1] and strong_body
+                    and disp_ok and vol_ok and bull_rej and pivot_low_ok)
+    is_be_ob = bool(is_bear and row["high"] >= swing_high.iloc[-1] and strong_body
+                    and disp_ok and vol_ok and bear_rej and pivot_high_ok)
+
+    ob_type = "Bu-OB" if is_bu_ob else ("Be-OB" if is_be_ob else None)
+    if ob_type is None:
+        return {"ob_type": None, "candle_time": int(row["ts"])}
+
+    return {
+        "ob_type": ob_type,
+        "candle_time": int(row["ts"]),
+        "close": row["close"],
+        "body_ratio": round(body_ratio, 3),
+        "vol_ratio": round(row["volume"] / vol_ma.iloc[-1], 3) if vol_ma.iloc[-1] else None,
+    }
+
+
+def check_ob_pivot_alignment(ob_close, ob_type, daily, haos):
+    """
+    Cek apakah candle OB ini juga dekat level Pivot/Haoshoku yang SEARAH
+    (Bu-OB dekat S-level = bullish reversal di support -> masuk akal;
+    Be-OB dekat R-level = bearish reversal di resistance -> masuk akal).
+    Kombinasi yang tidak searah (misal Bu-OB dekat R-level) tidak dihitung,
+    karena secara logika dua sinyal itu tidak saling mendukung.
+    """
+    relevant_levels = ["S1", "S2", "S3"] if ob_type == "Bu-OB" else ["R1", "R2", "R3"]
+    aligned = []
+    for src, levels in [("Daily", daily), ("Haos", haos)]:
+        for lvl in relevant_levels:
+            price = levels[lvl]
+            gap_pct = abs(ob_close - price) / ob_close * 100
+            if gap_pct <= OB_LEVEL_TOLERANCE_PCT:
+                aligned.append({"source": src, "level": lvl, "gap_pct": round(gap_pct, 4)})
+    return aligned
+
+
+# ---------------------------------------------------------------------------
 # DAFTAR PAIR - tambah/kurangi sesuai kebutuhan (format ccxt utk Binance USDM)
 # ---------------------------------------------------------------------------
 
@@ -100,11 +206,12 @@ def fetch_ohlcv_with_fallback(symbol, timeframe, limit=3):
 
 
 def scan_symbol(symbol):
-    # Ambil beberapa candle terakhir supaya "candle sebelumnya" pasti sudah closed
-    ex_used_4h, df_4h = fetch_ohlcv_with_fallback(symbol, "4h", limit=3)
+    # 4H butuh histori lebih panjang untuk hitung ATR/volume MA/swing OB.
+    # 1D cukup 3 candle (cuma butuh candle sebelumnya buat Daily Pivot).
+    ex_used_4h, df_4h = fetch_ohlcv_with_fallback(symbol, "4h", limit=OB_ATR_PERIOD + OB_VOL_PERIOD + 10)
     ex_used_1d, df_1d = fetch_ohlcv_with_fallback(symbol, "1d", limit=3)
 
-    last_4h = df_4h.iloc[-1]      # candle 4H yang sedang berjalan/baru closed
+    last_4h = df_4h.iloc[-1]      # candle 4H yang sedang berjalan/baru closed (dipakai cek sentuhan level real-time)
     prev_4h = df_4h.iloc[-2]      # candle 4H sebelumnya -> sumber Haoshoku (auto-TF)
     prev_1d = df_1d.iloc[-2]      # candle Daily sebelumnya -> sumber Daily Pivot
 
@@ -121,6 +228,13 @@ def scan_symbol(symbol):
 
     pp_gap_pct = abs(daily["PP"] - haos["PP"]) / last_4h["close"] * 100
 
+    # OB dievaluasi di candle yang SUDAH CLOSED (bukan last_4h yang mungkin masih jalan)
+    hist_closed = df_4h.iloc[:-1].reset_index(drop=True)
+    ob = compute_ob(hist_closed)
+    ob_alignment = []
+    if ob and ob.get("ob_type"):
+        ob_alignment = check_ob_pivot_alignment(ob["close"], ob["ob_type"], daily, haos)
+
     return {
         "symbol": symbol,
         "exchange_daily": ex_used_1d,
@@ -134,6 +248,8 @@ def scan_symbol(symbol):
         "haoshoku_pivot": {k: round(v, 8) for k, v in haos.items()},
         "pp_confluence_pct": round(pp_gap_pct, 4),
         "events": events,
+        "ob": ob,
+        "ob_pivot_alignment": ob_alignment,  # kosong kalau tidak ada OB atau OB tidak dekat level manapun
     }
 
 
@@ -167,36 +283,54 @@ def main():
     with open("data/latest.json", "w") as f:
         json.dump(results, f, indent=2, default=str)
 
-    # Log historis - HANYA ditambah kalau candle-nya benar-benar baru (sudah closed),
-    # bukan setiap 30 menit polling candle yang sama yang masih berjalan.
+    # Log historis - HANYA ditambah kalau candle-nya benar-benar baru (sudah closed).
+    # state per-symbol sekarang berisi 2 timestamp: "pivot" (candle_time sentuhan
+    # level, dari last_4h) dan "ob" (candle_time konfirmasi OB, dari candle closed
+    # sebelumnya) - dua hal ini bisa beda candle, jadi di-dedup terpisah.
     state = load_state()
     new_rows = 0
     with open("data/events_log.jsonl", "a") as f:
         for s in results["symbols"]:
             if "error" in s:
                 continue
-            candle_time = s["last_candle"]["time"]
-            if state.get(s["symbol"]) == candle_time:
-                continue  # candle ini sudah pernah dicatat, skip
 
-            for ev in s["events"]:
+            sym = s["symbol"]
+            prev = state.get(sym, {})
+            if isinstance(prev, int):  # migrasi dari format state.json lama (flat int)
+                prev = {"pivot": prev, "ob": None}
+
+            pivot_time = s["last_candle"]["time"]
+            if prev.get("pivot") != pivot_time:
+                for ev in s["events"]:
+                    row = {
+                        "generated_at": results["generated_at"], "symbol": sym,
+                        "exchange_daily": s["exchange_daily"], "exchange_haoshoku": s["exchange_haoshoku"],
+                        "candle_time": pivot_time, "close": s["last_candle"]["close"],
+                        "pp_confluence_pct": s["pp_confluence_pct"],
+                        "source": ev["source"], "level": ev["level"],
+                        "price_level": ev["price_level"], "result": ev["result"],
+                    }
+                    f.write(json.dumps(row, default=str) + "\n")
+                    new_rows += 1
+
+            ob = s.get("ob")
+            if ob and ob.get("ob_type") and prev.get("ob") != ob["candle_time"]:
                 row = {
-                    "generated_at": results["generated_at"],
-                    "symbol": s["symbol"],
-                    "exchange_daily": s["exchange_daily"],
-                    "exchange_haoshoku": s["exchange_haoshoku"],
-                    "candle_time": candle_time,
-                    "close": s["last_candle"]["close"],
-                    "pp_confluence_pct": s["pp_confluence_pct"],
-                    "source": ev["source"],
-                    "level": ev["level"],
-                    "price_level": ev["price_level"],
-                    "result": ev["result"],
+                    "generated_at": results["generated_at"], "symbol": sym,
+                    "exchange_daily": s["exchange_daily"], "exchange_haoshoku": s["exchange_haoshoku"],
+                    "candle_time": ob["candle_time"], "close": ob["close"],
+                    "source": "OB", "level": ob["ob_type"], "result": ob["ob_type"],
+                    "body_ratio": ob.get("body_ratio"), "vol_ratio": ob.get("vol_ratio"),
+                    "pivot_alignment": s.get("ob_pivot_alignment", []),
+                    "combined_signal": bool(s.get("ob_pivot_alignment")),
                 }
                 f.write(json.dumps(row, default=str) + "\n")
                 new_rows += 1
 
-            state[s["symbol"]] = candle_time
+            state[sym] = {
+                "pivot": pivot_time,
+                "ob": ob["candle_time"] if ob else prev.get("ob"),
+            }
 
     save_state(state)
     print(f"Scan selesai: {len(SYMBOLS)} pair, {new_rows} event baru dicatat (sisanya candle lama/duplikat di-skip)")
