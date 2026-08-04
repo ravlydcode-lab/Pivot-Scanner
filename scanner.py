@@ -206,9 +206,11 @@ def fetch_ohlcv_with_fallback(symbol, timeframe, limit=3):
 
 
 def scan_symbol(symbol):
-    # 4H butuh histori lebih panjang untuk hitung ATR/volume MA/swing OB.
+    # 4H & 1H butuh histori lebih panjang untuk hitung ATR/volume MA/swing OB.
     # 1D cukup 3 candle (cuma butuh candle sebelumnya buat Daily Pivot).
-    ex_used_4h, df_4h = fetch_ohlcv_with_fallback(symbol, "4h", limit=OB_ATR_PERIOD + OB_VOL_PERIOD + 10)
+    ob_hist_limit = OB_ATR_PERIOD + OB_VOL_PERIOD + 10
+    ex_used_4h, df_4h = fetch_ohlcv_with_fallback(symbol, "4h", limit=ob_hist_limit)
+    ex_used_1h, df_1h = fetch_ohlcv_with_fallback(symbol, "1h", limit=ob_hist_limit)
     ex_used_1d, df_1d = fetch_ohlcv_with_fallback(symbol, "1d", limit=3)
 
     last_4h = df_4h.iloc[-1]      # candle 4H yang sedang berjalan/baru closed (dipakai cek sentuhan level real-time)
@@ -228,12 +230,19 @@ def scan_symbol(symbol):
 
     pp_gap_pct = abs(daily["PP"] - haos["PP"]) / last_4h["close"] * 100
 
-    # OB dievaluasi di candle yang SUDAH CLOSED (bukan last_4h yang mungkin masih jalan)
-    hist_closed = df_4h.iloc[:-1].reset_index(drop=True)
-    ob = compute_ob(hist_closed)
-    ob_alignment = []
-    if ob and ob.get("ob_type"):
-        ob_alignment = check_ob_pivot_alignment(ob["close"], ob["ob_type"], daily, haos)
+    # OB dievaluasi di candle yang SUDAH CLOSED (bukan candle yang mungkin masih jalan),
+    # dicek di 4H dan 1H sekaligus - keduanya dibandingkan ke level pivot yang SAMA
+    # (levelnya tidak perlu ganti TF, cuma frekuensi deteksi event-nya yang beda).
+    def ob_with_alignment(df):
+        hist_closed = df.iloc[:-1].reset_index(drop=True)
+        ob = compute_ob(hist_closed)
+        alignment = []
+        if ob and ob.get("ob_type"):
+            alignment = check_ob_pivot_alignment(ob["close"], ob["ob_type"], daily, haos)
+        return ob, alignment
+
+    ob_4h, ob_4h_alignment = ob_with_alignment(df_4h)
+    ob_1h, ob_1h_alignment = ob_with_alignment(df_1h)
 
     return {
         "symbol": symbol,
@@ -248,8 +257,8 @@ def scan_symbol(symbol):
         "haoshoku_pivot": {k: round(v, 8) for k, v in haos.items()},
         "pp_confluence_pct": round(pp_gap_pct, 4),
         "events": events,
-        "ob": ob,
-        "ob_pivot_alignment": ob_alignment,  # kosong kalau tidak ada OB atau OB tidak dekat level manapun
+        "ob_4h": ob_4h, "ob_4h_alignment": ob_4h_alignment,
+        "ob_1h": ob_1h, "ob_1h_alignment": ob_1h_alignment,
     }
 
 
@@ -284,9 +293,9 @@ def main():
         json.dump(results, f, indent=2, default=str)
 
     # Log historis - HANYA ditambah kalau candle-nya benar-benar baru (sudah closed).
-    # state per-symbol sekarang berisi 2 timestamp: "pivot" (candle_time sentuhan
-    # level, dari last_4h) dan "ob" (candle_time konfirmasi OB, dari candle closed
-    # sebelumnya) - dua hal ini bisa beda candle, jadi di-dedup terpisah.
+    # state per-symbol: "pivot" (candle_time sentuhan level, dari last_4h),
+    # "ob_4h" dan "ob_1h" (candle_time konfirmasi OB masing-masing TF) - tiga-tiganya
+    # bisa beda candle, jadi di-dedup terpisah.
     state = load_state()
     new_rows = 0
     with open("data/events_log.jsonl", "a") as f:
@@ -296,8 +305,11 @@ def main():
 
             sym = s["symbol"]
             prev = state.get(sym, {})
-            if isinstance(prev, int):  # migrasi dari format state.json lama (flat int)
-                prev = {"pivot": prev, "ob": None}
+            if isinstance(prev, int):  # migrasi dari format state.json paling lama (flat int)
+                prev = {"pivot": prev, "ob_4h": None, "ob_1h": None}
+            if "ob" in prev and "ob_4h" not in prev:  # migrasi dari format sebelum ada 1H
+                prev["ob_4h"] = prev.pop("ob")
+                prev.setdefault("ob_1h", None)
 
             pivot_time = s["last_candle"]["time"]
             if prev.get("pivot") != pivot_time:
@@ -313,23 +325,25 @@ def main():
                     f.write(json.dumps(row, default=str) + "\n")
                     new_rows += 1
 
-            ob = s.get("ob")
-            if ob and ob.get("ob_type") and prev.get("ob") != ob["candle_time"]:
-                row = {
-                    "generated_at": results["generated_at"], "symbol": sym,
-                    "exchange_daily": s["exchange_daily"], "exchange_haoshoku": s["exchange_haoshoku"],
-                    "candle_time": ob["candle_time"], "close": ob["close"],
-                    "source": "OB", "level": ob["ob_type"], "result": ob["ob_type"],
-                    "body_ratio": ob.get("body_ratio"), "vol_ratio": ob.get("vol_ratio"),
-                    "pivot_alignment": s.get("ob_pivot_alignment", []),
-                    "combined_signal": bool(s.get("ob_pivot_alignment")),
-                }
-                f.write(json.dumps(row, default=str) + "\n")
-                new_rows += 1
+            for tf_key, tf_label in [("ob_4h", "4h"), ("ob_1h", "1h")]:
+                ob = s.get(tf_key)
+                if ob and ob.get("ob_type") and prev.get(tf_key) != ob["candle_time"]:
+                    row = {
+                        "generated_at": results["generated_at"], "symbol": sym,
+                        "exchange_daily": s["exchange_daily"], "exchange_haoshoku": s["exchange_haoshoku"],
+                        "candle_time": ob["candle_time"], "close": ob["close"], "timeframe": tf_label,
+                        "source": "OB", "level": ob["ob_type"], "result": ob["ob_type"],
+                        "body_ratio": ob.get("body_ratio"), "vol_ratio": ob.get("vol_ratio"),
+                        "pivot_alignment": s.get(f"{tf_key}_alignment", []),
+                        "combined_signal": bool(s.get(f"{tf_key}_alignment")),
+                    }
+                    f.write(json.dumps(row, default=str) + "\n")
+                    new_rows += 1
 
             state[sym] = {
                 "pivot": pivot_time,
-                "ob": ob["candle_time"] if ob else prev.get("ob"),
+                "ob_4h": s["ob_4h"]["candle_time"] if s.get("ob_4h") else prev.get("ob_4h"),
+                "ob_1h": s["ob_1h"]["candle_time"] if s.get("ob_1h") else prev.get("ob_1h"),
             }
 
     save_state(state)
