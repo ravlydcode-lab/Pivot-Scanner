@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T22:26:47.668146+00:00",
+  "generated_at": "2026-08-07T23:04:17.645158+00:00",
   "symbols": [
     {
       "symbol": "BTC/USDT:USDT",
@@ -9,8 +9,8 @@
         "time": 1786132800000,
         "open": 64930.0,
         "high": 65087.0,
-        "low": 64867.8,
-        "close": 64896.6
+        "low": 64797.5,
+        "close": 64850.4
       },
       "daily_pivot": {
         "PP": 64473.86666667,
@@ -30,8 +30,14 @@
         "S2": 64473.066,
         "S3": 64258.0
       },
-      "pp_confluence_pct": 0.5349,
+      "pp_confluence_pct": 0.5353,
       "events": [
+        {
+          "source": "Daily",
+          "level": "R1",
+          "price_level": 64803.73333333,
+          "result": "BREAKOUT"
+        },
         {
           "source": "Haos",
           "level": "R1",
@@ -46,7 +52,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -59,7 +65,7 @@
         "open": 1917.87,
         "high": 1922.9,
         "low": 1911.76,
-        "close": 1914.91
+        "close": 1914.1
       },
       "daily_pivot": {
         "PP": 1905.24666667,
@@ -79,7 +85,7 @@
         "S2": 1901.61550667,
         "S3": 1893.35666667
       },
-      "pp_confluence_pct": 0.5081,
+      "pp_confluence_pct": 0.5083,
       "events": [
         {
           "source": "Daily",
@@ -95,7 +101,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -108,7 +114,7 @@
         "open": 73.98,
         "high": 74.06,
         "low": 73.56,
-        "close": 73.69
+        "close": 73.66
       },
       "daily_pivot": {
         "PP": 73.07,
@@ -128,7 +134,7 @@
         "S2": 73.15908,
         "S3": 72.8
       },
-      "pp_confluence_pct": 0.9092,
+      "pp_confluence_pct": 0.9096,
       "events": [
         {
           "source": "Daily",
@@ -144,7 +150,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -157,7 +163,7 @@
         "open": 593.1,
         "high": 593.4,
         "low": 591.8,
-        "close": 592.4
+        "close": 592.7
       },
       "daily_pivot": {
         "PP": 593.16666667,
@@ -186,7 +192,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -198,8 +204,8 @@
         "time": 1786132800000,
         "open": 1.023,
         "high": 1.0274,
-        "low": 1.0193,
-        "close": 1.0198
+        "low": 1.0183,
+        "close": 1.0213
       },
       "daily_pivot": {
         "PP": 1.0423,
@@ -219,7 +225,7 @@
         "S2": 1.01054267,
         "S3": 1.00366667
       },
-      "pp_confluence_pct": 2.0233,
+      "pp_confluence_pct": 2.0203,
       "events": [
         {
           "source": "Daily",
@@ -235,7 +241,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -248,7 +254,7 @@
         "open": 0.06982,
         "high": 0.0699,
         "low": 0.06956,
-        "close": 0.06975
+        "close": 0.06966
       },
       "daily_pivot": {
         "PP": 0.06913667,
@@ -268,7 +274,7 @@
         "S2": 0.06926796,
         "S3": 0.06897
       },
-      "pp_confluence_pct": 0.8793,
+      "pp_confluence_pct": 0.8805,
       "events": [],
       "ob_4h": {
         "ob_type": null,
@@ -277,7 +283,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -289,8 +295,8 @@
         "time": 1786132800000,
         "open": 0.2007,
         "high": 0.2031,
-        "low": 0.2005,
-        "close": 0.2014
+        "low": 0.2001,
+        "close": 0.2011
       },
       "daily_pivot": {
         "PP": 0.19933333,
@@ -310,7 +316,7 @@
         "S2": 0.19698153,
         "S3": 0.19503333
       },
-      "pp_confluence_pct": 0.3972,
+      "pp_confluence_pct": 0.3978,
       "events": [
         {
           "source": "Haos",
@@ -326,7 +332,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -339,7 +345,7 @@
         "open": 1.588,
         "high": 1.597,
         "low": 1.575,
-        "close": 1.592
+        "close": 1.593
       },
       "daily_pivot": {
         "PP": 1.67933333,
@@ -359,7 +365,7 @@
         "S2": 1.57817533,
         "S3": 1.56633333
       },
-      "pp_confluence_pct": 5.1508,
+      "pp_confluence_pct": 5.1475,
       "events": [
         {
           "source": "Haos",
@@ -381,7 +387,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -393,8 +399,8 @@
         "time": 1786132800000,
         "open": 0.09408,
         "high": 0.09447,
-        "low": 0.09271,
-        "close": 0.09284
+        "low": 0.09136,
+        "close": 0.09171
       },
       "daily_pivot": {
         "PP": 0.09216667,
@@ -414,7 +420,7 @@
         "S2": 0.09278425,
         "S3": 0.09175667
       },
-      "pp_confluence_pct": 2.4558,
+      "pp_confluence_pct": 2.4861,
       "events": [
         {
           "source": "Daily",
@@ -432,7 +438,13 @@
           "source": "Haos",
           "level": "S2",
           "price_level": 0.09278425,
-          "result": "REJECTION"
+          "result": "BREAKOUT"
+        },
+        {
+          "source": "Haos",
+          "level": "S3",
+          "price_level": 0.09175667,
+          "result": "BREAKOUT"
         }
       ],
       "ob_4h": {
@@ -442,7 +454,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -455,7 +467,7 @@
         "open": 0.3056,
         "high": 0.3057,
         "low": 0.3011,
-        "close": 0.3037
+        "close": 0.3036
       },
       "daily_pivot": {
         "PP": 0.30613333,
@@ -475,7 +487,7 @@
         "S2": 0.30055747,
         "S3": 0.29696667
       },
-      "pp_confluence_pct": 0.0768,
+      "pp_confluence_pct": 0.0769,
       "events": [
         {
           "source": "Haos",
@@ -491,7 +503,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -504,7 +516,7 @@
         "open": 0.4928,
         "high": 0.4934,
         "low": 0.4875,
-        "close": 0.4896
+        "close": 0.4895
       },
       "daily_pivot": {
         "PP": 0.49236667,
@@ -524,7 +536,7 @@
         "S2": 0.4854998,
         "S3": 0.4821
       },
-      "pp_confluence_pct": 0.2791,
+      "pp_confluence_pct": 0.2792,
       "events": [
         {
           "source": "Haos",
@@ -540,7 +552,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     },
@@ -553,7 +565,7 @@
         "open": 54.628,
         "high": 54.638,
         "low": 53.945,
-        "close": 54.291
+        "close": 54.153
       },
       "daily_pivot": {
         "PP": 56.03,
@@ -573,7 +585,7 @@
         "S2": 53.160868,
         "S3": 52.254
       },
-      "pp_confluence_pct": 2.5824,
+      "pp_confluence_pct": 2.589,
       "events": [],
       "ob_4h": {
         "ob_type": null,
@@ -582,7 +594,7 @@
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786136400000
+        "candle_time": 1786140000000
       },
       "ob_1h_alignment": []
     }
