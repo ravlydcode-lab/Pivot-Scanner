@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-08-08T11:54:59.231278+00:00",
+  "generated_at": "2026-08-08T12:30:29.729625+00:00",
   "symbols": [
     {
       "symbol": "BTC/USDT:USDT",
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
+        "time": 1786190400000,
         "open": 64933.9,
-        "high": 65024.9,
-        "low": 64906.8,
-        "close": 64938.1
+        "high": 65037.0,
+        "low": 64882.2,
+        "close": 64965.1
       },
       "daily_pivot": {
         "PP": 64784.96666667,
@@ -22,37 +22,49 @@
         "S3": 62965.43333333
       },
       "haoshoku_pivot": {
-        "PP": 64964.83333333,
-        "R1": 65014.60793333,
-        "R2": 65045.35873333,
-        "R3": 65095.13333333,
-        "S1": 64915.05873333,
-        "S2": 64884.30793333,
-        "S3": 64834.53333333
+        "PP": 64955.2,
+        "R1": 65000.3142,
+        "R2": 65028.1858,
+        "R3": 65073.3,
+        "S1": 64910.0858,
+        "S2": 64882.2142,
+        "S3": 64837.1
       },
-      "pp_confluence_pct": 0.277,
+      "pp_confluence_pct": 0.262,
       "events": [
         {
           "source": "Haos",
+          "level": "R2",
+          "price_level": 65028.1858,
+          "result": "REJECTION"
+        },
+        {
+          "source": "Haos",
           "level": "R1",
-          "price_level": 65014.60793333,
+          "price_level": 65000.3142,
           "result": "REJECTION"
         },
         {
           "source": "Haos",
           "level": "S1",
-          "price_level": 64915.05873333,
+          "price_level": 64910.0858,
+          "result": "REJECTION"
+        },
+        {
+          "source": "Haos",
+          "level": "S2",
+          "price_level": 64882.2142,
           "result": "REJECTION"
         }
       ],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -61,11 +73,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 1914.4,
-        "high": 1922.8,
-        "low": 1914.02,
-        "close": 1919.8
+        "time": 1786190400000,
+        "open": 1919.76,
+        "high": 1921.57,
+        "low": 1917.51,
+        "close": 1919.2
       },
       "daily_pivot": {
         "PP": 1916.82333333,
@@ -77,43 +89,24 @@
         "S3": 1839.14666667
       },
       "haoshoku_pivot": {
-        "PP": 1915.33666667,
-        "R1": 1917.40328667,
-        "R2": 1918.68004667,
-        "R3": 1920.74666667,
-        "S1": 1913.27004667,
-        "S2": 1911.99328667,
-        "S3": 1909.92666667
+        "PP": 1918.85666667,
+        "R1": 1922.21062667,
+        "R2": 1924.28270667,
+        "R3": 1927.63666667,
+        "S1": 1915.50270667,
+        "S2": 1913.43062667,
+        "S3": 1910.07666667
       },
-      "pp_confluence_pct": 0.0774,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 1920.74666667,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 1918.68004667,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 1917.40328667,
-          "result": "BREAKOUT"
-        }
-      ],
+      "pp_confluence_pct": 0.1059,
+      "events": [],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -122,11 +115,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 74.78,
-        "high": 75.64,
-        "low": 74.65,
-        "close": 75.46
+        "time": 1786190400000,
+        "open": 75.56,
+        "high": 75.63,
+        "low": 75.31,
+        "close": 75.37
       },
       "daily_pivot": {
         "PP": 73.45333333,
@@ -138,49 +131,31 @@
         "S3": 70.64666667
       },
       "haoshoku_pivot": {
-        "PP": 74.78,
-        "R1": 75.04358,
-        "R2": 75.20642,
-        "R3": 75.47,
-        "S1": 74.51642,
-        "S2": 74.35358,
-        "S3": 74.09
+        "PP": 75.28666667,
+        "R1": 75.67248667,
+        "R2": 75.91084667,
+        "R3": 76.29666667,
+        "S1": 74.90084667,
+        "S2": 74.66248667,
+        "S3": 74.27666667
       },
-      "pp_confluence_pct": 1.7581,
+      "pp_confluence_pct": 2.4324,
       "events": [
         {
           "source": "Daily",
           "level": "R2",
           "price_level": 75.38333333,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 75.47,
           "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 75.20642,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 75.04358,
-          "result": "BREAKOUT"
         }
       ],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -189,10 +164,10 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 594.3,
-        "high": 595.9,
-        "low": 593.4,
+        "time": 1786190400000,
+        "open": 596.3,
+        "high": 596.3,
+        "low": 595.1,
         "close": 595.7
       },
       "daily_pivot": {
@@ -205,37 +180,31 @@
         "S3": 577.23333333
       },
       "haoshoku_pivot": {
-        "PP": 593.9,
-        "R1": 594.9696,
-        "R2": 595.6304,
-        "R3": 596.7,
-        "S1": 592.8304,
-        "S2": 592.1696,
-        "S3": 591.1
+        "PP": 595.3,
+        "R1": 596.4078,
+        "R2": 597.0922,
+        "R3": 598.2,
+        "S1": 594.1922,
+        "S2": 593.5078,
+        "S3": 592.4
       },
-      "pp_confluence_pct": 0.5764,
+      "pp_confluence_pct": 0.8114,
       "events": [
         {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 595.6304,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
+          "source": "Daily",
           "level": "R1",
-          "price_level": 594.9696,
-          "result": "BREAKOUT"
+          "price_level": 596.03333333,
+          "result": "REJECTION"
         }
       ],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -244,11 +213,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 1.0341,
-        "high": 1.0399,
-        "low": 1.033,
-        "close": 1.0375
+        "time": 1786190400000,
+        "open": 1.0372,
+        "high": 1.0387,
+        "low": 1.0366,
+        "close": 1.0382
       },
       "daily_pivot": {
         "PP": 1.02506667,
@@ -260,43 +229,31 @@
         "S3": 0.97613333
       },
       "haoshoku_pivot": {
-        "PP": 1.03476667,
-        "R1": 1.03763167,
-        "R2": 1.03940167,
-        "R3": 1.04226667,
-        "S1": 1.03190167,
-        "S2": 1.03013167,
-        "S3": 1.02726667
+        "PP": 1.0367,
+        "R1": 1.0393358,
+        "R2": 1.0409642,
+        "R3": 1.0436,
+        "S1": 1.0340642,
+        "S2": 1.0324358,
+        "S3": 1.0298
       },
-      "pp_confluence_pct": 0.9349,
+      "pp_confluence_pct": 1.1205,
       "events": [
         {
           "source": "Daily",
           "level": "R1",
           "price_level": 1.03813333,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 1.03940167,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 1.03763167,
-          "result": "REJECTION"
+          "result": "BREAKOUT"
         }
       ],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -305,11 +262,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 0.07022,
-        "high": 0.07059,
-        "low": 0.07011,
-        "close": 0.07041
+        "time": 1786190400000,
+        "open": 0.07041,
+        "high": 0.07047,
+        "low": 0.07034,
+        "close": 0.07037
       },
       "daily_pivot": {
         "PP": 0.06957333,
@@ -321,49 +278,31 @@
         "S3": 0.06721667
       },
       "haoshoku_pivot": {
-        "PP": 0.07019333,
-        "R1": 0.07032703,
-        "R2": 0.07040963,
-        "R3": 0.07054333,
-        "S1": 0.07005963,
-        "S2": 0.06997703,
-        "S3": 0.06984333
+        "PP": 0.07036667,
+        "R1": 0.07055003,
+        "R2": 0.07066331,
+        "R3": 0.07084667,
+        "S1": 0.07018331,
+        "S2": 0.07007003,
+        "S3": 0.06988667
       },
-      "pp_confluence_pct": 0.8806,
+      "pp_confluence_pct": 1.1274,
       "events": [
         {
           "source": "Daily",
           "level": "R1",
           "price_level": 0.07037667,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R3",
-          "price_level": 0.07054333,
           "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 0.07040963,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 0.07032703,
-          "result": "BREAKOUT"
         }
       ],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -372,11 +311,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 0.2,
-        "high": 0.2003,
-        "low": 0.1982,
-        "close": 0.1994
+        "time": 1786190400000,
+        "open": 0.1992,
+        "high": 0.2001,
+        "low": 0.1989,
+        "close": 0.199
       },
       "daily_pivot": {
         "PP": 0.20026667,
@@ -388,37 +327,31 @@
         "S3": 0.18933333
       },
       "haoshoku_pivot": {
-        "PP": 0.20003333,
-        "R1": 0.20106473,
-        "R2": 0.20170193,
-        "R3": 0.20273333,
-        "S1": 0.19900193,
-        "S2": 0.19836473,
-        "S3": 0.19733333
+        "PP": 0.19923333,
+        "R1": 0.20003553,
+        "R2": 0.20053113,
+        "R3": 0.20133333,
+        "S1": 0.19843113,
+        "S2": 0.19793553,
+        "S3": 0.19713333
       },
-      "pp_confluence_pct": 0.117,
+      "pp_confluence_pct": 0.5193,
       "events": [
         {
           "source": "Haos",
-          "level": "S1",
-          "price_level": 0.19900193,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "S2",
-          "price_level": 0.19836473,
+          "level": "R1",
+          "price_level": 0.20003553,
           "result": "REJECTION"
         }
       ],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -427,11 +360,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 1.589,
-        "high": 1.616,
-        "low": 1.588,
-        "close": 1.61
+        "time": 1786190400000,
+        "open": 1.613,
+        "high": 1.614,
+        "low": 1.604,
+        "close": 1.606
       },
       "daily_pivot": {
         "PP": 1.61166667,
@@ -443,37 +376,24 @@
         "S3": 1.45833333
       },
       "haoshoku_pivot": {
-        "PP": 1.59466667,
-        "R1": 1.60574467,
-        "R2": 1.61258867,
-        "R3": 1.62366667,
-        "S1": 1.58358867,
-        "S2": 1.57674467,
-        "S3": 1.56566667
+        "PP": 1.60533333,
+        "R1": 1.61602933,
+        "R2": 1.62263733,
+        "R3": 1.63333333,
+        "S1": 1.59463733,
+        "S2": 1.58802933,
+        "S3": 1.57733333
       },
-      "pp_confluence_pct": 1.0559,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 1.61258867,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 1.60574467,
-          "result": "BREAKOUT"
-        }
-      ],
+      "pp_confluence_pct": 0.3944,
+      "events": [],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -482,11 +402,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 0.09091,
-        "high": 0.09136,
-        "low": 0.09055,
-        "close": 0.09065
+        "time": 1786190400000,
+        "open": 0.09072,
+        "high": 0.09099,
+        "low": 0.09059,
+        "close": 0.09093
       },
       "daily_pivot": {
         "PP": 0.09343,
@@ -498,24 +418,24 @@
         "S3": 0.08031
       },
       "haoshoku_pivot": {
-        "PP": 0.09106333,
-        "R1": 0.09167453,
-        "R2": 0.09205213,
-        "R3": 0.09266333,
-        "S1": 0.09045213,
-        "S2": 0.09007453,
-        "S3": 0.08946333
+        "PP": 0.09087333,
+        "R1": 0.09118275,
+        "R2": 0.09137391,
+        "R3": 0.09168333,
+        "S1": 0.09056391,
+        "S2": 0.09037275,
+        "S3": 0.09006333
       },
-      "pp_confluence_pct": 2.6108,
+      "pp_confluence_pct": 2.8117,
       "events": [],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -524,11 +444,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 0.3063,
-        "high": 0.3086,
-        "low": 0.3052,
-        "close": 0.3063
+        "time": 1786190400000,
+        "open": 0.3065,
+        "high": 0.3067,
+        "low": 0.3057,
+        "close": 0.3064
       },
       "daily_pivot": {
         "PP": 0.30246667,
@@ -540,37 +460,24 @@
         "S3": 0.27393333
       },
       "haoshoku_pivot": {
-        "PP": 0.30686667,
-        "R1": 0.30843287,
-        "R2": 0.30940047,
-        "R3": 0.31096667,
-        "S1": 0.30530047,
-        "S2": 0.30433287,
-        "S3": 0.30276667
+        "PP": 0.30676667,
+        "R1": 0.30806547,
+        "R2": 0.30886787,
+        "R3": 0.31016667,
+        "S1": 0.30546787,
+        "S2": 0.30466547,
+        "S3": 0.30336667
       },
-      "pp_confluence_pct": 1.4365,
-      "events": [
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 0.30843287,
-          "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "S1",
-          "price_level": 0.30530047,
-          "result": "REJECTION"
-        }
-      ],
+      "pp_confluence_pct": 1.4034,
+      "events": [],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -579,11 +486,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 0.486,
-        "high": 0.4887,
-        "low": 0.4828,
-        "close": 0.4859
+        "time": 1786190400000,
+        "open": 0.4858,
+        "high": 0.4863,
+        "low": 0.4827,
+        "close": 0.4856
       },
       "daily_pivot": {
         "PP": 0.4912,
@@ -595,31 +502,31 @@
         "S3": 0.4496
       },
       "haoshoku_pivot": {
-        "PP": 0.48606667,
-        "R1": 0.48908447,
-        "R2": 0.49094887,
-        "R3": 0.49396667,
-        "S1": 0.48304887,
-        "S2": 0.48118447,
-        "S3": 0.47816667
+        "PP": 0.48576667,
+        "R1": 0.48802047,
+        "R2": 0.48941287,
+        "R3": 0.49166667,
+        "S1": 0.48351287,
+        "S2": 0.48212047,
+        "S3": 0.47986667
       },
-      "pp_confluence_pct": 1.0565,
+      "pp_confluence_pct": 1.1189,
       "events": [
         {
           "source": "Haos",
           "level": "S1",
-          "price_level": 0.48304887,
+          "price_level": 0.48351287,
           "result": "REJECTION"
         }
       ],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     },
@@ -628,11 +535,11 @@
       "exchange_daily": "okx",
       "exchange_haoshoku": "okx",
       "last_candle": {
-        "time": 1786176000000,
-        "open": 54.394,
-        "high": 54.843,
-        "low": 54.346,
-        "close": 54.592
+        "time": 1786190400000,
+        "open": 54.528,
+        "high": 54.546,
+        "low": 54.362,
+        "close": 54.54
       },
       "daily_pivot": {
         "PP": 54.851,
@@ -644,43 +551,31 @@
         "S3": 49.078
       },
       "haoshoku_pivot": {
-        "PP": 54.33833333,
-        "R1": 54.45980933,
-        "R2": 54.53485733,
-        "R3": 54.65633333,
-        "S1": 54.21685733,
-        "S2": 54.14180933,
-        "S3": 54.02033333
+        "PP": 54.57233333,
+        "R1": 54.76218733,
+        "R2": 54.87947933,
+        "R3": 55.06933333,
+        "S1": 54.38247933,
+        "S2": 54.26518733,
+        "S3": 54.07533333
       },
-      "pp_confluence_pct": 0.9391,
+      "pp_confluence_pct": 0.5109,
       "events": [
         {
           "source": "Haos",
-          "level": "R3",
-          "price_level": 54.65633333,
+          "level": "S1",
+          "price_level": 54.38247933,
           "result": "REJECTION"
-        },
-        {
-          "source": "Haos",
-          "level": "R2",
-          "price_level": 54.53485733,
-          "result": "BREAKOUT"
-        },
-        {
-          "source": "Haos",
-          "level": "R1",
-          "price_level": 54.45980933,
-          "result": "BREAKOUT"
         }
       ],
       "ob_4h": {
         "ob_type": null,
-        "candle_time": 1786161600000
+        "candle_time": 1786176000000
       },
       "ob_4h_alignment": [],
       "ob_1h": {
         "ob_type": null,
-        "candle_time": 1786183200000
+        "candle_time": 1786186800000
       },
       "ob_1h_alignment": []
     }
